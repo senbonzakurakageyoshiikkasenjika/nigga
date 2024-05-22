@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weight Converter</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+    }
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    .result {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Weight Converter</h2>
+    <input type="number" id="inputWeight" placeholder="Enter weight in kilograms">
+    <button onclick="convertWeight()">Convert</button>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function convertWeight() {
+        const kilograms = parseFloat(document.getElementById('inputWeight').value);
+        if (isNaN(kilograms)) {
+            alert("Please enter a valid number.");
+            return;
+        }
+        const pounds = kilograms * 2.20462;
+        const ounces = kilograms * 35.274;
+        const grams = kilograms * 1000;
+        const milligrams = kilograms * 1e+6;
+        const tons = kilograms * 0.001;
+
+        document.getElementById('result').innerHTML = `
+            <p>${kilograms} kilograms is equal to:</p>
+            <ul>
+                <li>${pounds.toFixed(2)} pounds</li>
+                <li>${ounces.toFixed(2)} ounces</li>
+                <li>${grams.toFixed(2)} grams</li>
+                <li>${milligrams.toFixed(2)} milligrams</li>
+                <li>${tons.toFixed(2)} tons</li>
+            </ul>
+        `;
+    }
+</script>
+</body>
+</html>

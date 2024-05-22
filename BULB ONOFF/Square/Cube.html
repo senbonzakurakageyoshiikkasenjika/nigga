@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BlaBlaBla</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            background: url() no-repeat  ;
+            background-position: center 20px;
+            background-size: 2900px;
+           
+        }
+
+        .calculator {
+            width: 300px;
+            margin: 50px auto;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            padding: 80px;
+            box-shadow: 0 0 10px rgba(16, 14, 14, 0.1);
+            background: transparent;
+            backdrop-filter: blur(20px);
+            
+        }
+
+        input[type="text"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        #button{
+            width: 45px;
+            height: 45px;
+            margin: 5px;
+            font-size: 18px;
+            padding: 1px 30px;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+            background: #f2f2f2;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        #button:hover {
+            background-color: #1a1515;
+            color: rgb(236, 127, 19);
+            border: 2px solid rgb(236, 127, 19);
+        }
+
+        .result {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="txt" placeholder="Enter The Number Boke">
+    
+        <button  onclick="newfunction()" id="button">  =  </button>
+   
+
+        <div class="result" id="result1"></div>
+        <br><br><br><br><br>
+        <div class="result" id="result2"></div>
+      
+    </div>
+
+    <script>
+       function newfunction(){
+        let text = document.getElementById("txt").value;
+        let square_root = text * text;
+        let cube_root = text * text * text;
+
+        let display1 = document.getElementById("result1");
+        let display2 = document.getElementById("result2");
+
+        display1.innerHTML = "The square root of " + text + " is " + square_root;
+        display2.innerHTML = "The cube root of " + text +  " is " + cube_root;
+       }
+    </script>
+</body>
+</html>

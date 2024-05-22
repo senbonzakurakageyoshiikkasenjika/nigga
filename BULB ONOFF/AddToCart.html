@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add to Cart Page</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 80px;
+    color: #000000;
+    font-family: cursive;
+    font-size: 50px;
+
+  }
+  .product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  .product img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .product-details {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  .product-title {
+    font-size: 22px;
+    margin: 0;
+  }
+  .product-price {
+    font-size: 20px;
+    color: #888;
+    margin-top: 5px;
+  }
+  .add-to-cart {
+    text-align: center;
+  }
+  .btn {
+    padding: 12px 24px;
+    background-color: #2f2c26;
+    color: rgb(182, 121, 41);
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background-color 0.4s ease-in-out;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    border: 4px solid rgb(210, 145, 61);
+  }
+  .btn:hover {
+    background-color: #020202;
+    color: #e97714;
+    font-weight: 700;
+    border: 4px solid rgb(221, 210, 195);
+    border-radius: 15px;
+  }
+  .cart {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .quantity {
+    display: flex;
+    align-items: center;
+  }
+  .quantity input {
+    width: 40px;
+    text-align: center;
+    margin: 0 10px;
+  }
+  .remove-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: 2px solid rgb(210, 145, 61);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .remove-btn:hover {
+    background-color: #bd2130;
+    border: 2px solid rgb(210, 145, 61);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Add to Cart</h1>
+  <br>
+  <div class="product">
+    <img src="2.jfif" alt="Product Image">
+    <div class="product-details">
+      <h2 class="product-title">Kagami Taiga</h2>
+      <p class="product-price">$9.99</p>
+    </div>
+    <div class="add-to-cart">
+      <button class="btn" onclick="addToCart('Kagami Taiga', 99.99)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="cart" id="cart1">
+    <h2>Cart - Kagami Taiga</h2>
+    <div id="cart-items1"></div>
+    <p>Total: $<span id="cart-total1">0.00</span></p>
+  </div>
+  <br><hr><br>
+
+  <div class="product">
+    <img src="3.jfif" alt="Product Image">
+    <div class="product-details">
+      <h2 class="product-title">Murasakibara Atsushi</h2>
+      <p class="product-price">$8.99</p>
+    </div>
+    <div class="add-to-cart">
+      <button class="btn" onclick="addToCart('Murasakibara Atsushi', 49.99)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="cart" id="cart2">
+    <h2>Cart - Murasakibara Atsushi</h2>
+    <div id="cart-items2"></div>
+    <p>Total: $<span id="cart-total2">0.00</span></p>
+  </div>
+  <br><hr><br>
+
+  <div class="product">
+    <img src="4.jfif" alt="Product Image">
+    <div class="product-details">
+      <h2 class="product-title">Kuroko Tetsu</h2>
+      <p class="product-price">$12.99</p>
+    </div>
+    <div class="add-to-cart">
+      <button class="btn" onclick="addToCart('Kuroko Tetsu', 49.99)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="cart" id="cart3">
+    <h2>Cart - Kuroko Tetsu</h2>
+    <div id="cart-items3"></div>
+    <p>Total: $<span id="cart-total3">0.00</span></p>
+  </div>
+  <br><hr><br>
+
+  <div class="product">
+    <img src="1.jfif" alt="Product Image">
+    <div class="product-details">
+      <h2 class="product-title">Midorima Shintaro</h2>
+      <p class="product-price">$17.99</p>
+    </div>
+    <div class="add-to-cart">
+      <button class="btn" onclick="addToCart('Midorima Shintaro', 49.99)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="cart" id="cart4">
+    <h2>Cart - Midorima Shintaro</h2>
+    <div id="cart-items4"></div>
+    <p>Total: $<span id="cart-total4">0.00</span></p>
+  </div>
+  <br><hr><br>
+  <div class="product">
+    <img src="5.jfif" alt="Product Image">
+    <div class="product-details">
+      <h2 class="product-title">Akashi Seijiro</h2>
+      <p class="product-price">$20.99</p>
+    </div>
+    <div class="add-to-cart">
+      <button class="btn" onclick="addToCart('Akashi Seijiro', 49.99)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="cart" id="cart5">
+    <h2>Cart - Akashi Seijiro</h2>
+    <div id="cart-items5"></div>
+    <p>Total: $<span id="cart-total5">0.00</span></p>
+  </div>
+  <br><hr><br>
+
+  <div class="product">
+    <img src="6.jfif" alt="Product Image">
+    <div class="product-details">
+      <h2 class="product-title">Kise Ryota</h2>
+      <p class="product-price">$6.99</p>
+    </div>
+    <div class="add-to-cart">
+      <button class="btn" onclick="addToCart('Kise Ryota', 49.99)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="cart" id="cart6">
+    <h2>Cart - Kise Ryota</h2>
+    <div id="cart-items6"></div>
+    <p>Total: $<span id="cart-total6">0.00</span></p>
+  </div>
+  <br><hr><br>
+
+  <div class="product">
+    <img src="7.jfif" alt="Product Image">
+    <div class="product-details">
+      <h2 class="product-title">Aomine Daiki</h2>
+      <p class="product-price">$18.99</p>
+    </div>
+    <div class="add-to-cart">
+      <button class="btn" onclick="addToCart('Aomine Daiki', 49.99)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="cart" id="cart7">
+    <h2>Cart - Aomine Daiki</h2>
+    <div id="cart-items7"></div>
+    <p>Total: $<span id="cart-total7">0.00</span></p>
+  </div>
+  <br><hr><br>
+
+  <!-- Add more products and carts here -->
+</div>
+
+<script>
+  // Define cart arrays and total variables for each cart
+  let cartItems1 = [];
+  let cartTotal1 = 0;
+
+  let cartItems2 = [];
+  let cartTotal2 = 0;
+
+  let cartItems3 = [];
+  let cartTotal3 = 0;
+
+  let cartItems4 = [];
+  let cartTotal4 = 0;
+
+  let cartItems5 = [];
+  let cartTotal5 = 0;
+
+  let cartItems6 = [];
+  let cartTotal6 = 0;
+
+  let cartItems7 = [];
+  let cartTotal7 = 0;
+
+  // Add to cart function
+  function addToCart(name, price) {
+    if (name === 'Kagami Taiga') {
+      addToCartForProduct(name, price, cartItems1, cartTotal1, 'cart-items1', 'cart-total1');
+    } else if (name === 'Murasakibara Atsushi') {
+      addToCartForProduct(name, price, cartItems2, cartTotal2, 'cart-items2', 'cart-total2');
+    } else if (name === 'Kuroko Tetsu') {
+      addToCartForProduct(name, price, cartItems3, cartTotal3, 'cart-items3', 'cart-total3');
+    } else if (name === 'Midorima Shintaro') {
+      addToCartForProduct(name, price, cartItems4, cartTotal4, 'cart-items4', 'cart-total4');
+    } else if (name === 'Akashi Seijiro') {
+      addToCartForProduct(name, price, cartItems5, cartTotal5, 'cart-items5', 'cart-total5');
+    } else if (name === 'Kise Ryota') {
+      addToCartForProduct(name, price, cartItems6, cartTotal6, 'cart-items6', 'cart-total6');
+    } else if (name === 'Aomine Daiki') {
+      addToCartForProduct(name, price, cartItems7, cartTotal7, 'cart-items7', 'cart-total7');
+    }
+    // Add more else if conditions for additional products here
+  }
+
+  // Add to cart for specific product
+  function addToCartForProduct(name, price, cartItems, cartTotal, cartItemsId, cartTotalId) {
+    let existingItem = cartItems.find(item => item.name === name);
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      cartItems.push({ name: name, price: price, quantity: 1 });
+    }
+    cartTotal += price;
+
+    updateCart(cartItems, cartTotal, cartItemsId, cartTotalId);
+  }
+
+  // Remove from cart function
+  function removeFromCart(name, price, cartItems, cartTotal, cartItemsId, cartTotalId) {
+    let existingItem = cartItems.find(item => item.name === name);
+    if (existingItem && existingItem.quantity > 1) {
+      existingItem.quantity--;
+      cartTotal -= price;
+    } else {
+      cartItems = cartItems.filter(item => item.name !== name);
+      cartTotal -= price;
+    }
+
+    updateCart(cartItems, cartTotal, cartItemsId, cartTotalId);
+  }
+
+  // Update cart function
+  function updateCart(cartItems, cartTotal, cartItemsId, cartTotalId) {
+    const cartItemsElement = document.getElementById(cartItemsId);
+    const cartTotalElement = document.getElementById(cartTotalId);
+
+    // Clear previous items
+    cartItemsElement.innerHTML = '';
+
+    // Add new items
+    cartItems.forEach(item => {
+      const cartItem = document.createElement('div');
+      cartItem.classList.add('cart-item');
+
+      const itemName = document.createElement('span');
+      itemName.textContent = item.name;
+      const itemQuantity = document.createElement('div');
+      itemQuantity.classList.add('quantity');
+      const quantityInput = document.createElement('input');
+      quantityInput.type = 'number';
+      quantityInput.min = '1';
+      quantityInput.value = item.quantity;
+      quantityInput.addEventListener('change', (event) => {
+        const newQuantity = parseInt(event.target.value);
+        const quantityDifference = newQuantity - item.quantity;
+        item.quantity = newQuantity;
+        cartTotal += quantityDifference * item.price;
+        updateCart(cartItems, cartTotal, cartItemsId, cartTotalId);
+      });
+      const removeButton = document.createElement('button');
+      removeButton.textContent = '-';
+      removeButton.classList.add('remove-btn');
+      removeButton.onclick = function() {
+        removeFromCart(item.name, item.price, cartItems, cartTotal, cartItemsId, cartTotalId);
+      };
+      const price = document.createElement('span');
+      price.textContent = `$${(item.price * item.quantity).toFixed(2)}`;
+
+      itemQuantity.appendChild(removeButton);
+      itemQuantity.appendChild(quantityInput);
+
+      cartItem.appendChild(itemName);
+      cartItem.appendChild(itemQuantity);
+      cartItem.appendChild(price);
+
+      cartItemsElement.appendChild(cartItem);
+    });
+
+    // Update total
+    cartTotalElement.textContent = cartTotal.toFixed(2);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlaBlaBla</title>
+</head>
+<body>
+    <script>
+        function  vowels(){
+            let userinput = prompt("Enter YOur Damn Name Nerd:").toLowerCase();
+            let count = 0;
+       
+        for(let i = 0; i <userinput.length;i++){
+            if(userinput[i] ==='a' || userinput[i] ==='e' || userinput[i] ==='i' || userinput[i] ==='o' || userinput[i] ==='u'){
+                count++;
+            }
+           
+        }
+        return count;
+    }
+        let vowel = vowels();
+        console.log(`The Number Of Vowels in ur Name is: ${vowel}` );
+
+
+    </script>
+    
+</body>
+</html>

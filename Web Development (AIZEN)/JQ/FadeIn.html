@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>BlaBlaBla</title>
+</head>
+<body>
+    <button>YOKOSO</button><br><br><br><br><br><br>
+    <div id="divichi" style="height:100px; width:100px; display:none; background-color:rgb(29, 163, 143);"></div><br><br>
+    <div id="divnii" style="height:100px; width:100px; display:none; background-color:rgb(47, 177, 49);"></div><br><br>
+    <div id="divsan" style="height:100px; width:100px; display:none; background-color:rgb(114, 67, 208);"></div><br><br>
+    
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#divichi").fadeIn(1000)
+                $("#divnii").fadeIn(2000)
+                $("#divsan").fadeIn(3000)
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Opacity and Hide</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .container {
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        img {
+            max-width: 200px;
+        }
+       
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>jQuery Opacity and Hide</h2>
+        <img src="/valorant-jett-valorant-riot-games-hd-wallpaper-preview.jpg" alt="Image">
+        <br><br>
+        <button id="toggleOpacity">Toggle Opacity</button>
+        <button id="hideImage">Hide Image</button>
+        <button id="hideButton">Hide Button</button>
+        <button id="hideText">Hide Text</button>
+        <p id="textToHide">This is some text to hide.</p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Toggle Opacity
+            $('#toggleOpacity').click(function () {
+                $('img').fadeOut("slow");
+            });
+
+            // Hide Image
+            $('#hideImage').click(function () {
+                $('img').hide();
+            });
+
+            // Hide Button
+            $('#hideButton').click(function () {
+                $(this).fadeTo(100,0.5);
+            });
+
+            // Hide Text
+            $('#hideText').click(function () {
+                $('#textToHide').hide();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

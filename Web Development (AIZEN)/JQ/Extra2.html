@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>BlaBlaBla</title>
+</head>
+<style>
+    .important{
+        font-weight: bold;
+        font-size: xx-large;
+    }
+    .blue{
+        color: rgb(238, 151, 37);
+    }
+
+</style> 
+<body>
+    <h1>BANKAI</h1>
+    <h2>SHIKAI</h2>
+    <p>YOKOSO</p>
+    <p>SOUL SOCIETY</p>
+    <div>YARE YARE DAZE MATTHAK</div>
+    <button>DAMARE</button>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function (){
+                $("h1,h2,p").addClass("blue");
+                $("div").addClass("important");
+            });
+        });
+    </script>
+</body>
+</html>

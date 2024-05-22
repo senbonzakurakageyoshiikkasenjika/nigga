@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>BlaBlaBla</title>
+    <link rel="shortcut icon" href="/R A S H E D _ Cartoon profile pics, Cool wallpapers cartoon, Cartoon wallpaper.jfif" type="image/x-icon">
+</head>
+<body>
+    
+    <div id="demo">
+
+    </div>
+<button onclick="getlocation()">BUTTON</button>
+
+
+
+    <script>
+        let a = document.getElementById("demo");
+
+        function getlocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition)
+            }else{
+                a.innerHTML="user not found"
+            }
+        }
+        function showPosition(position){
+            a.innerHTML = "latitude:" + position.coords.latitude+ "<br> longitude:" +position.coords.latitude
+        }
+    </script>
+</body>
+</html>

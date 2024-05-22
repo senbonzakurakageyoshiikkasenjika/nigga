@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery Autocomplete</title>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<style>
+    #autocomplete{
+        background: white url('Web Development (AIZEN)/Practice/wallpaperflare.com_wallpaper (1).jpg') right center no-repeat;
+    }
+</style>
+</head>
+<body>
+<label for="autocomplete">Search:</label>
+<input type="text" id="autocomplete">
+
+<script>
+$(document).ready(function() {
+    // Define your source of data here. For demonstration purposes, I'm using a static array.
+    var availableTags = [
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme"
+    ];
+    
+    // Initialize autocomplete
+    $("#autocomplete").autocomplete({
+        source: availableTags // Provide the source for autocomplete suggestions
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlaBlaBla</title>
+    <style>
+        .outer{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(176, 124, 57);
+            
+        }
+        .animation{
+            height: 200px;
+            width: 150px;
+            background-color: rgba(183, 120, 39, 0.853);
+            font-size: x-large;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            border-radius: 17px;
+
+            animation-name: yokoso;
+            animation-duration: 2.8s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+
+        }
+
+        @keyframes yokoso {
+            10%{background-color: rgb(26, 22, 22)}
+            50%{background-color: rgb(103, 59, 2)}
+            100%{background-color: rgb(37, 107, 130)}
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="animation">YOKOSO</div>
+    </div>
+    
+</body>
+</html>

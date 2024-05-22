@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>BlaBlaBla</title>
+    <style>
+        .yokoso {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            white-space: normal;
+            overflow: visible;
+            width: 100%;
+        }
+
+        .bankai img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 15px;
+
+        }
+
+        .bankai {
+            height: 300px;
+            width: 250px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border: 3px solid rgb(213, 171, 115);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px;
+            color: rgb(203, 139, 28);
+        }
+
+        @media(max-width:868px) {
+            .yokoso {
+                flex-wrap: wrap;
+                background-image: linear-gradient(30deg, rgb(163, 111, 43), rgb(58, 183, 58));
+                white-space: normal;
+                overflow: visible;
+            }
+        }
+
+        @media(max-width:480px) {
+            .yokoso {
+                flex-wrap: wrap;
+                background-image: linear-gradient(30deg, rgb(163, 111, 43), rgb(58, 183, 58));
+                white-space: normal;
+                overflow: visible;
+
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+    <div class="yokoso">
+        <div class="bankai"><img src="https://i.pinimg.com/236x/ea/d8/dd/ead8dda592699b9087907b2c62046d4e.jpg"
+                alt="Kyoraku">
+            <p>KatenKyokotsuKaramatsuShinju</p>
+        </div>
+        <div class="bankai"><img src="https://i.pinimg.com/236x/3f/8f/0f/3f8f0f760830558660003a0b6847cc97.jpg"
+                alt="Yamamoto">
+            <p>ZankaNoTachi</p>
+        </div>
+        <div class="bankai"><img src="https://i.pinimg.com/236x/83/45/62/8345624a98c4f663d163b8825bff36c2.jpg"
+                alt="Byakuya">
+            <p>SenbonZakuraKageyoshi</p>
+        </div>
+        <div class="bankai"><img src="https://i.pinimg.com/236x/62/18/48/621848d9865065c79bcd1e974c73e70c.jpg"
+                alt="Rukia">
+            <p>HaqqaNoTogamme</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

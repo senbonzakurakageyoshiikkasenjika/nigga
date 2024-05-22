@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>BlaBlaBla</title>
+</head>
+<body>
+    <button>bankai</button>
+    <div style="background-color: #353432;height:100px;width:100px;position:absolute; ">YOKOSO</div>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                let task = $("div");
+                task.animate({left:"100px" } ,"slow");
+                task.animate({fontSize:"3em"   }, "slow");
+                task.animate({fontSize:"1em"   }, "slow");
+                task.animate({left:"-500px" } ,"slow");
+                
+              
+            });
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Bulb</title>
+    <style>
+        #bulb {
+            width: 500px;
+            height: 550px;
+            margin: 50px auto;
+            cursor: pointer;
+        }
+        button {
+            background-color: #201e1b;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 100px;
+        }
+
+        button:hover {
+            background-color: #020202;
+            color: rgb(243, 158, 47);
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <img id="bulb" src="on.jfif" onclick="toggleBulb()">
+    <button onclick="turnOn()">Turn On</button>
+    <button onclick="turnOff()">Turn Off</button></center>
+
+    <script>
+        var bulb = document.getElementById('bulb');
+
+        function turnOn() {
+            bulb.src = 'off.jfif';
+        }
+
+        function turnOff() {
+            bulb.src = 'on.jfif';
+        }
+
+        function toggleBulb() {
+            if (bulb.src.endsWith('on.jfif')) {
+                turnOn();
+            } else {
+                turnOff();
+            }
+        }
+    </script>
+</body>
+</html>

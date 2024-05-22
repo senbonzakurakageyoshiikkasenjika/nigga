@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            max-width: 400px;
+            height: 90vh;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .result {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+        .result h2 {
+            margin-bottom: 5px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .result p {
+            margin: 5px 0;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <form id="marksheetForm" onsubmit="return calculateMarks()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="fname">Father's Name:</label>
+        <input type="text" id="fname" name="father_name" required>
+
+        <label for="class">Class:</label>
+        <input type="text" id="class" name="class" required>
+
+        <label for="r-no">Roll Number:</label>
+        <input type="text" id="r-no" name="roll_number" required>
+
+        <label for="eng-m">English Marks:</label>
+        <input type="text" id="eng-m" name="english_marks" required>
+
+        <label for="jp-m">Japanese Marks:</label>
+        <input type="text" id="jp-m" name="japanese_marks" required>
+
+        <label for="math-m">Maths Marks:</label>
+        <input type="text" id="math-m" name="maths_marks" required>
+
+        <label for="hindi-m">Hindi Marks:</label>
+        <input type="text" id="hindi-m" name="hindi_marks" required>
+
+        <label for="flp-m">Filipino Marks:</label>
+        <input type="text" id="flp-m" name="filipino_marks" required>
+
+        <label for="k-m">Korean Marks:</label>
+        <input type="text" id="k-m" name="korean_marks" required>
+
+        <input type="submit" value="Calculate">
+    </form>
+
+    <div id="result" class="result" style="display: none;">
+        <h2>Result:</h2>
+        <p id="totalMarks"></p>
+        <p id="percentage"></p>
+        <p id="grade"></p>
+    </div>
+
+    <script>
+        function calculateMarks() {
+            var englishMarks = parseInt(document.getElementById("eng-m").value);
+            var japaneseMarks = parseInt(document.getElementById("jp-m").value);
+            var mathsMarks = parseInt(document.getElementById("math-m").value);
+            var hindiMarks = parseInt(document.getElementById("hindi-m").value);
+            var filipinoMarks = parseInt(document.getElementById("flp-m").value);
+            var koreanMarks = parseInt(document.getElementById("k-m").value);
+
+            var totalMarks = englishMarks + japaneseMarks + mathsMarks + hindiMarks + filipinoMarks + koreanMarks;
+            var percentage = (totalMarks / 600) * 100;
+
+            document.getElementById("totalMarks").innerHTML = "Total Marks: " + totalMarks;
+            document.getElementById("percentage").innerHTML = "Percentage: " + percentage.toFixed(2) + "%";
+
+            var grade = calculateGrade(percentage);
+            document.getElementById("grade").innerHTML = "Grade: " + grade;
+
+            document.getElementById("result").style.display = "block";
+
+            return false; // Prevent form submission
+        }
+
+        function calculateGrade(percentage) {
+            if (percentage >= 90) {
+                return "A+";
+            } else if (percentage >= 80) {
+                return "A";
+            } else if (percentage >= 70) {
+                return "B";
+            } else if (percentage >= 60) {
+                return "C";
+            } else if (percentage >= 50) {
+                return "D";
+            } else {
+                return "F";
+            }
+        }
+    </script>
+</body>
+</html>

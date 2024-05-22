@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blablabla</title>
+    <style>
+        body {
+            background: url(/wallpaperflare.com_wallpaper\ \(1\).jpg) no-repeat ;
+            color: #db3210;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .clock {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 3%;
+            border: 8px solid #333;
+            background:transparent;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            transition: .1s all linear;
+        }
+        .clock:hover{
+            background: transparent;
+            border: 8px solid rgb(30, 29, 29);
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            
+        }
+
+        .hour-hand, .minute-hand, .second-hand {
+            position: absolute;
+            font-size: 10px;
+            background: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            transform-origin: 50% 100%;
+        }
+
+        .hour-hand {
+            width: 8px;
+            height: 60px;
+            top: calc(50% - 60px);
+            left: calc(50% - 4px);
+        }
+
+        .minute-hand {
+            width: 6px;
+            height: 80px;
+            top: calc(50% - 80px);
+            left: calc(50% - 3px);
+        }
+
+        .second-hand {
+            width: 2px;
+            height: 90px;
+            top: calc(50% - 90px);
+            left: calc(50% - 1px);
+        }
+
+        .dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #fff;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        h1{
+            position: absolute;
+            top: 0;
+            color: #8baaaa;
+            font-family: cursive;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ban-Kai</h1>
+    <div class="clock">
+        <div class="hour-hand" id="hour"></div>
+        <div class="minute-hand" id="minute"></div>
+        <div class="second-hand" id="second"></div>
+        <div class="dot"></div>
+    </div>
+    <script>
+        const hour = document.querySelector(".hour-hand");
+        const minute = document.querySelector(".minute-hand");
+        const second = document.querySelector(".second-hand");
+
+        function SetDate() {
+            const now = new Date();
+            const getSecond = now.getSeconds();
+            const getMinute = now.getMinutes();
+            const getHour = now.getHours();
+
+            const secondDegree = (getSecond / 60) * 360;
+            const minuteDegree = (getMinute / 60) * 360;
+            const hourDegree = (getHour / 12) * 360;
+
+            second.style.transform = `rotate(${secondDegree}deg)`;
+            minute.style.transform = `rotate(${minuteDegree}deg)`;
+            hour.style.transform = `rotate(${hourDegree}deg)`;
+
+
+        }
+
+        setInterval(SetDate, 1000);
+    </script>
+</body>
+</html>

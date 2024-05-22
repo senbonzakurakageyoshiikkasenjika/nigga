@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            background: url(bg2.png) no-repeat  ;
+            background-position: center 20px;
+            background-size: 2900px;
+           
+        }
+
+        .calculator {
+            width: 300px;
+            margin: 50px auto;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            padding: 80px;
+            box-shadow: 0 0 10px rgba(16, 14, 14, 0.1);
+            background: transparent;
+            backdrop-filter: blur(20px);
+            
+        }
+
+        input[type="text"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        button {
+            width: 45px;
+            height: 45px;
+            margin: 5px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background: #f2f2f2;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1a1515;
+            color: rgb(236, 127, 19);
+            border: 2px solid rgb(236, 127, 19);
+        }
+
+        .result {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="num1" placeholder="Ichi No Numba">
+        <input type="text" id="num2" placeholder="Nii No Numba">
+        <button onclick="add()">+</button>
+        <button onclick="subtract()">-</button>
+        <button onclick="multiply()">*</button>
+        <button onclick="divide()">/</button>
+        <br><br><br>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function add() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('result').innerHTML = num1 + num2;
+        }
+
+        function subtract() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('result').innerHTML = num1 - num2;
+        }
+
+        function multiply() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('result').innerHTML = num1 * num2;
+        }
+
+        function divide() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            if (num2 !== 0) {
+                document.getElementById('result').innerHTML = num1 / num2;
+            } else {
+                document.getElementById('result').innerHTML = "Cannot divide by zero";
+            }
+        }
+    </script>
+</body>
+</html>

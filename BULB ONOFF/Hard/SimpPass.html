@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blablabla</title>
+</head>
+<style>
+      
+</style>
+<body>
+      
+       
+
+    
+</body>
+</html>
+<script>
+    function generateSimplePassword(length) {
+        const charset = 'abcdefghijklmnopqrstuvwxyz1234567890';
+        let password = '';
+        for (let i = 0; i < length; i++) {
+            const index = Math.floor(Math.random() * charset.length);
+            password += charset[index];
+        }
+        return password;
+    }
+
+    function generateHardPassword(length) {
+        const charset = 'abcdefghijklmnopqrstuvwxyz1234567890[]ABCDEFGHIJKLMNOPQRSTUVWXYZ;;/.\=-+_`~|*/-+';
+        let password = '';
+        for (let i = 0; i < length; i++) {
+            const index = Math.floor(Math.random() * charset.length);
+            password += charset[index];
+        }
+        return password;
+    }
+
+    let length = 12;
+    let isHard = confirm("DO U Want A Hard Password? Think Again Boke")
+
+    if (isHard) {
+        let password = generateHardPassword(length);
+        document.write(password);
+
+    }
+    else {
+        let password = generateSimplePassword(length);
+        document.write(password);
+    }
+
+</script>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Ban-Kai [
+    <!ELEMENT Ban-Kai (#PCDATA | name | class | age )*>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT age (#PCDATA)>
+    <!ELEMENT class (#PCDATA)>
+]>
+
+
+
+
+<Ban-Kai>
+    <name>Gin</name>
+    <age>99</age>
+    <class>After Aizen</class>
+</Ban-Kai>
